@@ -1,0 +1,349 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+body {
+
+    background-color: #131313;
+    font-family: 'Montserrat', sans-serif;
+}
+/* navbar */
+nav {
+    position: fixed;
+    top: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    
+}
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+nav ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 18px;
+}
+nav ul li a:hover {
+    color: #4066ff;
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #3126d0;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+nav button:hover {
+    background-color: #1e4ae9;
+}
+
+/* Hero */
+.hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 14rem;
+
+}
+
+.hero .container .name {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero .container .name h4 {
+    margin-bottom: 1rem;
+    color: #717171;
+}
+
+.hero .container .name h2 {
+    margin-bottom: 1rem;
+    color: #878686;
+}
+
+.hero .container .name h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2rem;
+    background-image: linear-gradient(to right, #4066ff, #3126d0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.hero .container .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #1231fb;
+    position: absolute;
+    z-index: -1;
+    filter: blur(200px);
+}
+
+.hero .container .content-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.hero .container .buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 3rem;
+}
+
+.hero .container .buttons button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero .container .buttons #hire-me {
+    padding: 10px 20px;
+    background-color: #4066ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+.hero .container .buttons #hire-me:hover {
+    padding: 10px 20px;
+    background-color: #1e4ae9;
+    box-shadow: 0 0 10px rgba(64, 102, 255, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+.hero .container .buttons #download-cv {
+    padding: 10px 20px;
+    color: #616161;
+    border: 2px solid #616161;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+.hero .container .buttons #download-cv:hover {
+    padding: 10px 20px;
+    color: #ffffff;
+    border: 2px solid #1e4ae9;
+    background-color: #1e4ae9;
+    box-shadow: 0 0 10px rgba(64, 102, 255, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero .container .content {
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2020204c;
+    
+    gap: 20px;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-right: 37rem;
+    color: #ffffff;
+}
+
+.hero .container .content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to right, #4066ff, #3126d0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+.hero .container .content p {
+    font-size: 0.8rem;
+}
+
+.hero .photo {
+    /* Make photo to right side */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-right: 10rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    filter: saturate(0) brightness(0.8) contrast(1.1);
+}
+
+/* Section Services */
+section.services {
+    padding: 4rem 0;
+    margin-top: 20rem;
+}
+section.services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.services .container .card-wraper .card i {
+    font-size: 3rem;
+    color: #4066ff;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+section.services .container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    background-image: linear-gradient(to right, #4066ff, #3126d0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+section.services .container .card-wraper h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    background-image: linear-gradient(to right, #4066ff, #3126d0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+section.services .container p {
+    font-size: 1rem;
+    color: #b3b3b3;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+section.services .container .card-wraper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+section.services .container .card-wraper .card {
+    background-color: #202020;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+section.services .container .card-wraper .card:hover {
+    transform: translateY(-10px);
+}   
+
+section.about-me {
+    margin-top: 10rem;
+}
+
+section.about-me .container h1{
+    margin-top: 10rem;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    background-image: linear-gradient(to right, #4066ff, #3126d0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+section.about-me .container p {
+    text-align: center;
+    color: #b3b3b3;
+}
+
+section.about-me .container .content-wrapper .photo {
+    transform: translateY(-15%);
+    margin-left: 10rem;
+    filter: saturate(0) brightness(0.8) contrast(1.1);
+
+}
+
+section.about-me .container .content-wrapper {
+    display: flex;
+    flex-direction:row;
+}
+
+section.about-me .container .content-wrapper .content p {
+    text-align: justify;
+    margin-top: 10rem;
+    max-width: 40rem;
+    letter-spacing: 0.1rem;
+}
+
+/* section skill */
+section.skill {
+    padding: 4rem 0;
+    margin-top: 20rem;
+}
+section.skill .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section.skill .container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    background-image: linear-gradient(to right, #4066ff, #3126d0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+section.skill .container p {
+    font-size: 1rem;
+    color: #b3b3b3;
+    text-align: center;
+    margin-bottom: 4rem;
+}
