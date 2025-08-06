@@ -525,3 +525,107 @@ footer hr {
     background-color: #404040;
     margin: 1rem 0;
 }
+
+@media (max-width: 768px) {
+
+    .hero .container .content-social {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 1rem;
+        position: sticky;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .hero .container {
+        padding-top: 8rem;
+        text-align: center;
+    }
+
+    .hero .container .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero .container .content {
+        flex-direction: column;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .hero .photo {
+        position: static;
+        transform: none;
+        width: fit-content;
+        margin: 2rem auto;
+    }
+
+    .hero .photo img {
+        width: 100%;
+        height: auto;
+
+    }
+
+    section.services .container {
+        margin-top: -10rem;
+    }
+
+    section.about-me .container {
+        margin-top: -10rem;
+    }
+
+    section.about-me .container .content-wrapper .photo img{
+        width: 100%;
+        height: auto;
+    }
+
+    section.services .container .card-wraper,
+    section.skill .container .skill-wrapper,
+    section.portfolio .container .portfolio-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.about-me .container .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    section.about-me .container .content-wrapper .photo {
+        margin: 2rem auto;
+        transform: none;
+        width: 80%;
+    }
+
+    section.about-me .container .content-wrapper .content p {
+        margin: 2rem 0;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero .container .name h1 {
+        font-size: 2rem;
+    }
+
+    section.skill .container .skill-wrapper .skill-card,
+    section.portfolio .container .portfolio-wrapper .portfolio-card {
+        width: 90%;
+    }
+
+    footer .container .navigation ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+}
