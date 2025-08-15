@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+\    <!-- style -->
+    <div id="theme"><link rel="stylesheet" href="./assets/css/style.css"></div>
 
-    <!-- style -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- Google Fonts -->
 </head>
 <body>
     <nav>
@@ -25,15 +24,19 @@
                 <li><a href="#skill">Skills</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
             </ul>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
             
         </div>
     </nav>
     <div class="hero">
         <div class="container">
             <div class="name">
-                <h4>Hi I am</h4>
-                <h2>Yudha Prasetiya</h2>
-                <h1>Developer & VFX Artist</h1>
+                <h4 class="animated-text" data-splitting>Hi I am</h4>
+                <h2 class="animated-text-name" data-splitting>Yudha Prasetiya</h2>
+                <h1 class="animated-text-role" data-splitting>Developer & VFX Artist</h1>
             </div>
             <div class="circle"></div>
             <div class="content-social">
@@ -216,5 +219,8 @@
             </div>
         </div>
     </footer>
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
