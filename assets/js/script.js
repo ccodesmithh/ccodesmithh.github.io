@@ -1,7 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  anime.timeline()
-  .add({
+  const tl = anime.timeline({
+    autoplay: true
+  });
+  tl.add({
       targets: '.circle',
       keyframes: [
           { opacity: 0, duration: 150 },
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, "-=800")
 
   .add({
-    targets: '.container .content',
+    targets: '.hero .container .content',
     opacity: [0, 1],
     easing: 'easeOutQuad',
   }, "-=900")
@@ -70,7 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
     translateY: [50, 0],
     opacity: [0, 1],
     easing: 'easeOutQuad',
-  }, "-=700");
+  }, "-=700")
+
+  .finished.then(() => {
+    // Aktifkan scroll kembali setelah animasi selesai
+    document.documentElement.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
+  });
 
   const target = document.querySelector('.services-title');
   const observer = new IntersectionObserver((entries, obs) => {
