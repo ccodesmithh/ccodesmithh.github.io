@@ -1,5 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
   const tl = anime.timeline({
     autoplay: true
   });
@@ -75,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, "-=700")
 
   .finished.then(() => {
-    // Aktifkan scroll kembali setelah animasi selesai
     document.documentElement.style.overflow = 'auto';
     document.body.style.overflow = 'auto';
   });
@@ -115,10 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
           }, "-=700")
-          obs.unobserve(target);
+          obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.0 }); 
+    }, { 
+      threshold: 0.0,
+      rootMargin: "0px 0px 200px 0px"
+    }); 
 
     observer.observe(target);
   });
