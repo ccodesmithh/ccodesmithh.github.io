@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }, { 
         threshold: 0.0,
-        rootMargin: "0px 0px 0px 0px"
+        rootMargin: "0px 0px 100px 0px"
       });
 
       observer2.observe(target2);
@@ -280,19 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1000,
                 easing: "easeOutQuad"
               }, "-=700")
-              .add({
-                targets: ".portfolio .container .portfolio-wrapper .portfolio-card",
-                opacity: [0, 1],
-                duration: 1000,
-                direction: "alternate",
-                easing: "easeOutQuad",
-                delay: function(el, i)  {
-                  return i * 150;
-                },
-                endDelay: function(el, i, l) {
-                  return (l - 1) * 150;
-                },
-              }, "-=700")
               obs.unobserve(entry.target);
             }
           });
@@ -302,4 +289,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         observer5.observe(target5);
+    const target6 = document.querySelector('.portfolio .container .portfolio-wrapper .portfolio-card');
+    const observer6 = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            anime.timeline()
+            .add({
+              targets: ".portfolio .container h1",
+              opacity: [0, 1],
+              translateY: [40, 0],
+              duration: 1000,
+              easing: "easeOutQuad"
+            })
+            .add({
+              targets: ".portfolio .container p",
+              opacity: [0, 1],
+              translateY: [40, 0],
+              duration: 1000,
+              easing: "easeOutQuad"
+            }, "-=700")
+            
+            .add({
+              targets: ".portfolio .container .portfolio-wrapper .portfolio-card",
+              translateY: [40, 0],
+              opacity: [0, 1],
+              duration: 1000,
+              direction: "alternate",
+              easing: "easeOutQuad",
+              delay: function(el, i)  {
+                return i * 150;
+              },
+              endDelay: function(el, i, l) {
+                return (l - 1) * 150;
+              },
+            }, "-=700")
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { 
+        threshold: 0.0,
+        rootMargin: "0px 0px 100px 0px"
+      });
+
+      observer6.observe(target6);
 });
