@@ -70,6 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }, "-=900")
 
   .add({
+    targets: '.number-projects',
+    innerHTML: [0, 100+'+' ],
+    round: 1,
+    easing: 'easeOutQuad',
+  }, "-=1000")
+
+  .add({
+    targets: '.number-clients',
+    innerHTML: [0, 50+'+' ],
+    round: 1,
+    easing: 'easeOutQuad',
+  }, "-=1000")
+
+  .add({
     targets: '.photo-hero',
     translateY: [50, 0],
     opacity: [0, 1],
@@ -114,15 +128,72 @@ document.addEventListener('DOMContentLoaded', () => {
               return (l - 1) * 150;
             },
 
-
           }, "-=700")
           obs.unobserve(entry.target);
         }
       });
     }, { 
       threshold: 0.0,
-      rootMargin: "0px 0px 200px 0px"
+      rootMargin: "0px 0px 100px 0px"
     }); 
 
     observer.observe(target);
+
+    const target2 = document.querySelector('.about-me-title');
+    const observer2 = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            anime.timeline()
+            .add({
+              targets: ".about-me-title",
+              opacity: [0, 1],
+              translateY: [40, 0],
+              duration: 1000,
+              easing: "easeOutQuad"
+            })
+            .add({
+              targets: ".about-me-description",
+              opacity: [0, 1],
+              translateY: [40, 0],
+              duration: 1000,
+              easing: "easeOutQuad"
+            }, "-=700")
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { 
+        threshold: 0.0,
+        rootMargin: "0px 0px 0px 0px"
+      });
+
+      observer2.observe(target2);
+
+      const target3 = document.querySelector('.about-me-text');
+      const observer3 = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              anime.timeline()
+              .add({
+                targets: ".about-me-photo",
+                opacity: [0, 1],
+                translateX: [-60, 0],
+                duration: 1000,
+                easing: "easeOutQuad"
+              })
+              .add({
+                targets: ".about-me-text",
+                opacity: [0, 1],
+                translateX: [60, 0],
+                duration: 1000,
+                easing: "easeOutQuad"
+              }, "-=700")
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { 
+          threshold: 0.0,
+          rootMargin: "0px 0px 100px 0px"
+        });
+
+        observer3.observe(target3);
   });
