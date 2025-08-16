@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
           { opacity: 0, duration: 150 },
           { opacity: 1, duration: 150 },
           { opacity: 0, duration: 150 },
+          { opacity: 1, duration: 150 },
+          { opacity: 0, duration: 150 },
+          { opacity: 1, duration: 150 },
+          { opacity: 0, duration: 150 },
           { opacity: 1, duration: 150 }
       ],
       easing: 'easeInOutSine'
@@ -32,21 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   .add({
     targets: '.animated-text',
-    translateX: [40, 0],
+    translateY: [40, 0],
     opacity: [0, 1],
     easing: 'easeOutQuad',
   }, "-=700")
 
   .add({
     targets: '.animated-text-name',
-    translateX: [40, 0],
+    translateY: [40, 0],
     opacity: [0, 1],
     easing: 'easeOutQuad',
   }, "-=700")
 
   .add({
     targets: '.animated-text-role',
-    translateX: [40, 0],
+    translateY: [40, 0],
     opacity: [0, 1],
     easing: 'easeOutQuad',
   }, "-=700")
