@@ -595,7 +595,7 @@ footer hr {
     margin: 1rem 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1390px) {
 
     .hero .container .content-social {
         flex-direction: row;
