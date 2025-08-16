@@ -260,4 +260,46 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       observer4.observe(target4);
+
+      const target5 = document.querySelector('.portfolio .container h1');
+      const observer5 = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              anime.timeline()
+              .add({
+                targets: ".portfolio .container h1",
+                opacity: [0, 1],
+                translateY: [40, 0],
+                duration: 1000,
+                easing: "easeOutQuad"
+              })
+              .add({
+                targets: ".portfolio .container p",
+                opacity: [0, 1],
+                translateY: [40, 0],
+                duration: 1000,
+                easing: "easeOutQuad"
+              }, "-=700")
+              .add({
+                targets: ".portfolio .container .portfolio-wrapper .portfolio-card",
+                opacity: [0, 1],
+                duration: 1000,
+                direction: "alternate",
+                easing: "easeOutQuad",
+                delay: function(el, i)  {
+                  return i * 150;
+                },
+                endDelay: function(el, i, l) {
+                  return (l - 1) * 150;
+                },
+              }, "-=700")
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { 
+          threshold: 0.0,
+          rootMargin: "0px 0px 100px 0px"
+        });
+
+        observer5.observe(target5);
 });
