@@ -527,22 +527,6 @@ section.portfolio .container .portfolio-wrapper .portfolio-card p {
     margin-top: 0.5rem;
     text-align: justify;
 }
-/* section.portfolio .container .portfolio-wrapper .portfolio-card a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 10px 20px;
-    background-color: #4066ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-section.portfolio .container .portfolio-wrapper .portfolio-card a:hover {
-    background-color: #1e4ae9;
-    box-shadow: 0 0 10px rgba(64, 102,  255, 0.5);
-}  */
-
 footer {
     background-color: #202020;
     padding: 2rem 0;

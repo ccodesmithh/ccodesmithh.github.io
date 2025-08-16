@@ -318,8 +318,8 @@ document.addEventListener('DOMContentLoaded', () => {
               translateY: [40, 0],
               opacity: [0, 1],
               duration: 1000,
-              direction: "alternate",
-              easing: "easeOutQuad",
+              // direction: "alternate",
+              // easing: "easeOutQuad",
               delay: function(el, i)  {
                 return i * 150;
               },
