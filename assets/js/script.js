@@ -196,4 +196,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         observer3.observe(target3);
-  });
+
+    const target4 = document.querySelector('.skill .container h1');
+    const observer4 = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            anime.timeline()
+            .add({
+              targets: ".skill .container h1",
+              opacity: [0, 1],
+              translateY: [40, 0],
+              duration: 1000,
+              easing: "easeOutQuad"
+            })
+            .add({
+              targets: ".skill .container p",
+              opacity: [0, 1],
+              translateY: [40, 0],
+              duration: 1000,
+              easing: "easeOutQuad"
+            }, "-=700")
+            .add({
+              targets: ".skill .container .skill-wrapper .skill-card",
+              opacity: [0, 1],
+              duration: 1000,
+              direction: "alternate",
+              easing: "easeOutQuad",
+              delay: function(el, i)  {
+                return i * 150;
+              },
+              endDelay: function(el, i, l) {
+                return (l - 1) * 150;
+              },
+            }, "-=700")
+            const bars = document.querySelectorAll(".progress");
+
+            bars.forEach(bar => {
+              const target = parseInt(bar.textContent);
+              bar.style.width = "0%";
+              bar.textContent = "0%";
+
+              anime({
+                targets: bar,
+                delay: 1000,
+                width: target + "%",
+                duration: 1500,
+                update: anim => {
+                  const current = Math.round((anim.progress / 100) * target);
+                  bar.textContent = current + "%";
+                },
+                complete: () => {
+                  bar.textContent = target + "%";
+                }
+              });
+            });
+            obs.unobserve(entry.target);
+          }
+          
+        });
+      }, { 
+        threshold: 0.0,
+        rootMargin: "0px 0px 100px 0px"
+      });
+
+      observer4.observe(target4);
+});
